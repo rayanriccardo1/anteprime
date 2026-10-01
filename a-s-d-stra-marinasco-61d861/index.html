@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>A.S.D. Strà Marinasco – Ristorante a La Spezia (anteprima dimostrativa)</title>
+<style>
+:root{
+  --blu:#12303f;
+  --blu2:#1d4a5e;
+  --terra:#c4562f;
+  --crema:#fbf4e8;
+  --sabbia:#efe2cb;
+  --testo:#25292b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--testo);background:var(--crema);line-height:1.6}
+a{color:inherit}
+.banner{background:#fff3c4;color:#4a3b00;font:600 .8rem/1.4 system-ui,Arial,sans-serif;text-align:center;padding:.6rem 1rem;border-bottom:2px solid #e3c34d}
+.hero{position:relative;overflow:hidden;color:var(--crema);text-align:center;padding:4.5rem 1.25rem 5.5rem;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(196,86,47,.55),transparent 45%),
+    radial-gradient(circle at 10% 90%,rgba(29,74,94,.9),transparent 55%),
+    linear-gradient(160deg,var(--blu),#0b1f2a)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:44px;background:var(--crema);
+  clip-path:ellipse(60% 100% at 50% 100%)}
+.hero .tag{display:inline-block;font:600 .75rem system-ui,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid rgba(251,244,232,.5);border-radius:99px;padding:.35rem .9rem;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.1rem,8vw,3.8rem);line-height:1.1;font-weight:700;max-width:16ch;margin:0 auto .5rem}
+.hero .citta{font:500 1rem system-ui,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f2b79f;margin-bottom:1.2rem}
+.hero p.intro{max-width:34rem;margin:0 auto 1.8rem;font-size:1.1rem;opacity:.92}
+.btn{display:inline-block;text-decoration:none;font:600 1rem system-ui,Arial,sans-serif;padding:.85rem 1.6rem;border-radius:99px;
+  background:var(--terra);color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .15s}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+.btn.alt{background:transparent;border:1.5px solid var(--crema);box-shadow:none;margin-left:.4rem}
+section{padding:3.2rem 1.25rem;max-width:62rem;margin:0 auto}
+h2{font-size:1.8rem;color:var(--blu);margin-bottom:.4rem}
+h2::after{content:"";display:block;width:56px;height:4px;background:var(--terra);border-radius:4px;margin-top:.5rem}
+.lead{margin:1rem 0 1.8rem;max-width:40rem}
+.cards{display:grid;gap:1rem}
+.card{background:#fff;border-radius:14px;padding:1.4rem;border-top:5px solid var(--terra);box-shadow:0 4px 14px rgba(18,48,63,.08)}
+.card h3{color:var(--blu);margin-bottom:.35rem;font-size:1.2rem}
+.card p{font-size:.98rem}
+.menu{background:var(--sabbia);max-width:none}
+.menu .inner{max-width:62rem;margin:0 auto}
+.placeholder{border:2px dashed var(--blu2);border-radius:14px;padding:1.6rem;background:rgba(255,255,255,.55);text-align:center;color:var(--blu);font-style:italic}
+.contatti-grid{display:grid;gap:1.2rem;margin-top:1.5rem}
+.box{background:var(--blu);color:var(--crema);border-radius:16px;padding:1.6rem}
+.box h3{font-size:1.1rem;margin-bottom:.8rem;color:#f2b79f}
+.box ul{list-style:none;font-family:system-ui,Arial,sans-serif;font-size:.98rem}
+.box li{padding:.45rem 0;border-bottom:1px solid rgba(251,244,232,.15)}
+.box li:last-child{border:0}
+.box a{color:#fff;text-underline-offset:3px}
+.orari li{display:flex;justify-content:space-between;gap:1rem}
+.chiuso{color:#f2b79f}
+.mappa{display:inline-block;margin-top:.8rem;font-weight:600}
+footer{background:#0b1f2a;color:#cdd8dd;text-align:center;font:.85rem system-ui,Arial,sans-serif;padding:1.6rem 1rem}
+footer a{color:#f2b79f}
+@media(min-width:700px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .contatti-grid{grid-template-columns:1fr 1fr}
+  section{padding:4.2rem 2rem}
+}
+</style>
+</head>
+<body>
+
+<div class="banner">Anteprima dimostrativa realizzata da RR Web Agency, non è il sito ufficiale di A.S.D. Strà Marinasco</div>
+
+<header class="hero">
+  <span class="tag">Ristorante · Cucina italiana</span>
+  <h1>A.S.D. Strà Marinasco</h1>
+  <p class="citta">La Spezia</p>
+  <p class="intro">Un indirizzo a La Spezia dove ritrovarsi a tavola, a pranzo e a cena, con una proposta di cucina italiana.</p>
+  <a class="btn" href="#contatti">Contatti e orari</a>
+  <a class="btn alt" href="tel:+39018701055">Chiama</a>
+</header>
+
+<section id="cucina">
+  <h2>La nostra cucina</h2>
+  <p class="lead">Cucina italiana da vivere in compagnia. In questa sezione potranno trovare spazio la presentazione del locale e dell'offerta, con testi e fotografie forniti dal titolare.</p>
+  <div class="cards">
+    <article class="card">
+      <h3>A pranzo</h3>
+      <p>Un momento per fermarsi a mangiare con calma. I dettagli dell'offerta di mezzogiorno saranno indicati qui.</p>
+    </article>
+    <article class="card">
+      <h3>A cena</h3>
+      <p>Il servizio serale, per una cena in compagnia. Qui potranno essere inserite informazioni e proposte della serata.</p>
+    </article>
+    <article class="card">
+      <h3>Eventi e prenotazioni</h3>
+      <p>Spazio dedicato a eventuali serate, ricorrenze o modalità di prenotazione, da concordare con il titolare.</p>
+    </article>
+  </div>
+</section>
+
+<div class="menu">
+  <section class="inner" id="menu">
+    <h2>Il menu</h2>
+    <p class="lead">Una sezione pensata per far conoscere i piatti con chiarezza, anche da smartphone.</p>
+    <div class="placeholder">Il menu completo sarà disponibile qui.<br>Anche prezzi e eventuali specialità del giorno saranno inseriti in questo spazio.</div>
+  </section>
+</div>
+
+<section id="contatti">
+  <h2>Dove siamo e contatti</h2>
+  <div class="contatti-grid">
+    <div class="box">
+      <h3>Contatti</h3>
+      <ul>
+        <li>
+          <strong>Indirizzo</strong><br>
+          Via Costa di Santa Lucia 9, La Spezia<br>
+          <a class="mappa" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Costa+di+Santa+Lucia+9,+La+Spezia" target="_blank" rel="noopener">Apri su Google Maps →</a>
+        </li>
+        <li><strong>Telefono</strong><br><a href="tel:+39018701055">+39 0187 01055</a></li>
+        <li><strong>Email</strong><br><a href="mailto:circolostra.endas@virgilio.it">circolostra.endas@virgilio.it</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Orari</h3>
+      <ul class="orari">
+        <li><span>Lunedì</span><span class="chiuso">Chiuso</span></li>
+        <li><span>Martedì – Domenica</span><span>11:30 – 16:00<br>19:00 – 24:00</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>Anteprima creata da RR Web Agency, <a href="https://rrwebagency.it">rrwebagency.it</a></footer>
+
+</body>
+</html>
