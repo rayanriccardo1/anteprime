@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;800&amp;family=Manrope:wght@400;500;700&amp;display=swap"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%234E6B3A'%2F%3E%3Ctext%20x%3D'32'%20y%3D'45'%20font-size%3D'38'%20text-anchor%3D'middle'%20font-family%3D'Georgia%2Cserif'%20fill%3D'%23F7F5EC'%3EA%3C%2Ftext%3E%3C%2Fsvg%3E"><script>document.documentElement.className+=" js"</script><style>:root{--bg:#F4F1E8;--surface:#E5E0CF;--ink:#1F2A1C;--muted:#66705E;--accent:#4E6B3A;--accent2:#C9A24B;--on-accent:#F7F5EC;--font-display:"Fraunces",Georgia,serif;--font-body:"Manrope",system-ui,sans-serif;--display-weight:600}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.6;font-size:clamp(1rem,.95rem + .25vw,1.125rem);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--display-weight);line-height:1.04;letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+::selection{background:var(--accent);color:var(--on-accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+.px{position:relative;overflow:hidden;min-height:min(60vh,520px)}
+.px>[data-parallax]{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
+.progress{position:fixed;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(var(--p,0));transform-origin:left;z-index:60;pointer-events:none}
+.marquee{overflow:hidden;white-space:nowrap}
+.marquee .track{display:inline-flex;gap:var(--mq-gap,3rem);padding-right:var(--mq-gap,3rem);animation:mq var(--mq-speed,32s) linear infinite}
+.marquee .track>*{flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js [data-reveal]{opacity:0;transform:translate3d(0,32px,0);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.js [data-reveal=left]{transform:translate3d(-40px,0,0)}
+.js [data-reveal=right]{transform:translate3d(40px,0,0)}
+.js [data-reveal=scale]{transform:scale(.94)}
+.js [data-reveal=mask]{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1) var(--d,0ms)}
+.js [data-reveal].in{opacity:1;transform:none}
+.js [data-reveal=mask].in{clip-path:inset(0 0 0 0)}
+.js [data-split] .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.js [data-split] .w>*{display:inline-block;transform:translateY(112%);transition:transform 1s cubic-bezier(.2,.7,.2,1) calc(var(--i,0)*70ms)}
+.js [data-split].in .w>*{transform:none}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.js [data-reveal],.js [data-split] .w>*{opacity:1!important;transform:none!important;clip-path:none!important}
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>A.S.D. Strà Marinasco – Ristorante a La Spezia, Costa di Santa Lucia</title>
+<meta name="description" content="A.S.D. Strà Marinasco, ristorante di cucina italiana in Via Costa di Santa Lucia 9, La Spezia. Aperto da martedì a domenica, a pranzo e a cena. Chiama per prenotare.">
+<meta property="og:title" content="A.S.D. Strà Marinasco – Ristorante a La Spezia">
+<meta property="og:description" content="Cucina italiana in Via Costa di Santa Lucia, La Spezia. Aperto da martedì a domenica, a pranzo e a cena.">
+<meta property="og:type" content="website">
+<style>
+/* ===== Base ===== */
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.6;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:left;z-index:200}
+
+/* ===== Tipografia di sistema ===== */
+.kicker{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-variant-caps:all-small-caps;color:var(--muted)}
+.h2{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,5vw,3.75rem);line-height:1.05;letter-spacing:-.01em;margin:0 0 24px}
+.h2 em,.h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:clamp(1.0625rem,1.6vw,1.25rem);max-width:34em}
+p{margin:0 0 16px}
+
+/* ===== Pulsanti ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;border-radius:4px;font-weight:700;font-size:.9375rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--accent);transition:background .25s,color .25s,border-color .25s}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:color-mix(in srgb,var(--ink) 35%,transparent)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+
+/* ===== Fascia e navigazione ===== */
+.strip{background:var(--ink);color:var(--bg);font-size:.75rem;text-align:center;padding:8px 16px;letter-spacing:.02em}
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .3s}
+html.scrolled .nav{border-bottom-color:color-mix(in srgb,var(--ink) 15%,transparent)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;padding-inline:24px;gap:16px}
+.brand{font-family:var(--font-display);font-size:1.125rem;font-weight:600;text-decoration:none}
+.nav-links{display:none;gap:32px;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:.8125rem;font-weight:600;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;padding:12px 0;display:inline-block}
+.nav-links a:hover{color:var(--accent)}
+.nav-call{font-size:.875rem;font-weight:700;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;color:var(--accent)}
+@media(min-width:820px){.nav-links{display:flex}}
+
+/* ===== Sezioni ===== */
+.section{padding-block:clamp(5rem,12vw,10rem)}
+.wrap{padding-inline:24px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:16px;row-gap:40px}
+.sec-head{grid-column:1/-1;display:flex;align-items:baseline;gap:16px;border-top:1px solid color-mix(in srgb,var(--ink) 25%,transparent);padding-top:16px;margin-bottom:24px}
+.num{font-family:var(--font-display);font-size:.9375rem;color:var(--accent);font-weight:600}
+
+/* ===== Hero ===== */
+.hero{padding-block:clamp(3rem,8vw,6rem) clamp(4rem,10vw,8rem);position:relative}
+.h1{font-family:var(--font-display);font-weight:500;font-size:clamp(3rem,10.5vw,8rem);line-height:.96;letter-spacing:-.025em;margin:0;grid-column:1/-1;position:relative;z-index:2}
+.h1 span{display:block}
+.hero-side{grid-column:1/-1;display:flex;flex-direction:column;gap:16px}
+.hero-photo{grid-column:4/-1;margin-top:-16px;position:relative;z-index:1}
+.px{overflow:hidden;position:relative;aspect-ratio:4/5;background:color-mix(in srgb,var(--ink) 8%,transparent);border-radius:4px}
+.px img{width:100%;height:112%;object-fit:cover}
+.hero-cap{font-size:.75rem;color:var(--muted);margin-top:8px}
+@media(min-width:900px){
+ .hero-side{grid-column:1/5;grid-row:2;align-self:end}
+ .hero-photo{grid-column:7/12;grid-row:2/4;margin-top:-9vw}
+ .hero-text{grid-column:1/6;grid-row:3}
+ .h1{grid-column:1/-1}
+}
+.hero-text{grid-column:1/-1}
+
+/* ===== Atmosfera ===== */
+.col-narrow{grid-column:1/-1}
+.col-wide{grid-column:1/-1}
+.photo-tall{aspect-ratio:3/4}
+.photo-wide{aspect-ratio:4/3}
+.offset{margin-top:0}
+@media(min-width:900px){
+ .atm .col-narrow{grid-column:1/4}
+ .atm .col-wide{grid-column:5/-1}
+ .atm .photo-a{grid-column:2/7}
+ .atm .photo-b{grid-column:8/12;margin-top:96px}
+ .atm .grid{row-gap:56px}
+}
+.pull{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.2;border-left:2px solid var(--accent);padding-left:24px;margin:32px 0 0}
+
+/* ===== Tavola ===== */
+.tavola{background:var(--surface)}
+.points{list-style:none;margin:32px 0 0;padding:0}
+.points li{display:grid;grid-template-columns:48px 1fr;gap:8px;padding:20px 0;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.points li:last-child{border-bottom:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.points b{font-family:var(--font-display);font-weight:500;color:var(--accent)}
+.points h3{font-family:var(--font-display);font-weight:500;font-size:1.375rem;margin:0 0 4px}
+.points p{margin:0;color:var(--muted);font-size:.9375rem}
+.tavola .photo-b{aspect-ratio:4/5}
+@media(min-width:900px){
+ .tavola .col-narrow{grid-column:1/6}
+ .tavola .col-wide{grid-column:7/-1}
+ .tavola .photo-b{margin-top:-96px}
+}
+
+/* ===== Galleria ===== */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;grid-column:1/-1}
+.gallery figure{margin:0}
+.gallery .px{aspect-ratio:1/1}
+.gallery figure:nth-child(2){margin-top:32px}
+.gallery figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+@media(min-width:900px){
+ .gallery{grid-template-columns:repeat(4,1fr);gap:24px}
+ .gallery .px{aspect-ratio:3/4}
+ .gallery figure:nth-child(even){margin-top:56px}
+ .gallery figure:nth-child(2){margin-top:56px}
+}
+.gal-intro{grid-column:1/-1;max-width:34em}
+.marquee{overflow:hidden;border-block:1px solid color-mix(in srgb,var(--ink) 20%,transparent);padding:16px 0;margin-top:clamp(4rem,8vw,6rem)}
+.marquee .track{display:flex;gap:48px;white-space:nowrap;font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.75rem);color:var(--accent);width:max-content}
+.marquee .track span:nth-child(even){color:var(--ink)}
+
+/* ===== Orari e contatti ===== */
+.contact-main{grid-column:1/-1}
+.info{grid-column:1/-1}
+.hours{list-style:none;margin:0 0 32px;padding:0}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent);font-size:.9375rem}
+.hours li:last-child{border-bottom:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.hours span:last-child{font-weight:700;text-align:right}
+.hours .off span:last-child{color:var(--muted);font-weight:500}
+.data dt{margin-top:24px}
+.data dd{margin:4px 0 0;font-family:var(--font-display);font-size:1.25rem;overflow-wrap:anywhere}
+.data a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.data a:hover{color:var(--accent)}
+@media(min-width:900px){
+ .contact-main{grid-column:1/6}
+ .info{grid-column:7/-1}
+}
+
+/* ===== Invito finale ===== */
+.cta{background:var(--ink);color:var(--bg);text-align:left;position:relative;overflow:hidden}
+.cta .h2{font-size:clamp(2.5rem,8vw,6.5rem);line-height:1;max-width:11em;margin-bottom:32px}
+.cta .h2 em{color:var(--accent2)}
+.cta .kicker{color:color-mix(in srgb,var(--bg) 65%,transparent)}
+.cta .btn-primary{background:var(--accent2);border-color:var(--accent2);color:var(--ink)}
+.cta .btn-primary:hover{background:var(--bg);border-color:var(--bg)}
+.cta .btn-ghost{color:var(--bg);border-color:color-mix(in srgb,var(--bg) 40%,transparent)}
+.cta .btn-ghost:hover{border-color:var(--accent2);color:var(--accent2)}
+
+/* ===== Piè di pagina ===== */
+.footer{padding:40px 0 112px;font-size:.8125rem;color:var(--muted)}
+.footer .wrap{display:flex;flex-direction:column;gap:8px;border-top:1px solid color-mix(in srgb,var(--ink) 20%,transparent);padding-top:24px}
+.footer p{margin:0}
+.footer a{text-decoration:underline;text-underline-offset:3px}
+@media(min-width:820px){.footer{padding-bottom:40px}}
+
+/* ===== Chiama fisso mobile ===== */
+.call-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;display:flex}
+.call-bar .btn{flex:1;box-shadow:0 8px 24px color-mix(in srgb,var(--ink) 25%,transparent)}
+@media(min-width:820px){.call-bar{display:none}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress"></div>
+
+<div class="strip">Anteprima dimostrativa realizzata da RR Web Agency, non è il sito ufficiale di A.S.D. Strà Marinasco</div>
+
+<header class="nav">
+ <div class="wrap">
+  <a class="brand" href="#top">Strà Marinasco</a>
+  <ul class="nav-links">
+   <li><a href="#atmosfera">Il posto</a></li>
+   <li><a href="#tavola">La tavola</a></li>
+   <li><a href="#galleria">Galleria</a></li>
+   <li><a href="#contatti">Orari e contatti</a></li>
+  </ul>
+  <a class="nav-call" href="tel:+390187001055" aria-label="Chiama il ristorante">0187 01055</a>
+ </div>
+</header>
+
+<main id="top">
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+ <div class="wrap grid">
+  <h1 class="h1" data-split><span>Una tavola</span><span>sulla <em>collina</em></span></h1>
+  <div class="hero-side" data-reveal>
+   <p class="kicker">Ristorante · La Spezia<br>Costa di Santa Lucia</p>
+  </div>
+  <div class="hero-photo" data-reveal="mask">
+   <div class="px">
+    <img data-parallax="0.12" src="img/foto-1.jpg" alt="Sala di un ristorante con parete in mattoni, tavoli in legno e luci calde" width="800" height="1000">
+   </div>
+   <p class="hero-cap">Immagine illustrativa</p>
+  </div>
+  <div class="hero-text" data-reveal="left">
+   <p class="lead">Cucina italiana a La Spezia, a pranzo e a cena, da martedì a domenica. Un indirizzo per sedersi con calma.</p>
+   <div class="actions">
+    <a class="btn btn-primary" href="tel:+390187001055" data-magnetic>Chiama per prenotare</a>
+    <a class="btn btn-ghost" href="#contatti">Orari e indirizzo</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 01 Atmosfera ===== -->
+<section class="section atm" id="atmosfera">
+ <div class="wrap">
+  <div class="grid">
+   <div class="sec-head"><span class="num">01</span><span class="kicker">Il posto</span></div>
+   <div class="col-narrow" data-reveal="left">
+    <p class="kicker">Associazione sportiva dilettantistica, affiliata Endas</p>
+   </div>
+   <div class="col-wide" data-reveal="right">
+    <h2 class="h2" data-split>Si mangia, si resta, si <em>chiacchiera</em></h2>
+    <p class="lead">Strà Marinasco è un circolo con cucina, in Via Costa di Santa Lucia. Un luogo da vivere senza fretta, con amici e famiglia.</p>
+    <p class="pull">Il ritmo è quello di una tavolata, non di una corsa.</p>
+   </div>
+   <div class="photo-a" data-reveal="left">
+    <div class="px photo-tall"><img data-parallax="0.1" loading="lazy" src="img/foto-2.jpg" alt="Interno rustico con sedie, tavolo e mattoni a vista, immagine illustrativa" width="640" height="853"></div>
+   </div>
+   <div class="photo-b" data-reveal="right" data-delay="120">
+    <div class="px photo-wide"><img data-parallax="0.1" loading="lazy" src="img/foto-3.jpg" alt="Cuoco al lavoro in una cucina professionale, immagine illustrativa" width="640" height="480"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 02 Tavola ===== -->
+<section class="section tavola" id="tavola">
+ <div class="wrap">
+  <div class="grid">
+   <div class="sec-head"><span class="num">02</span><span class="kicker">La tavola</span></div>
+   <div class="col-narrow" data-reveal="left">
+    <h2 class="h2" data-split>Cucina italiana, <em>semplice</em></h2>
+    <p class="lead">Il menu cambia da un tavolo all'altro, da una stagione all'altra. Per sapere cosa c'è oggi, la via più rapida è una telefonata.</p>
+    <ul class="points">
+     <li><b>i.</b><div><h3>Pranzo</h3><p>Dal martedì alla domenica, dalle 11:30 alle 16:00.</p></div></li>
+     <li><b>ii.</b><div><h3>Cena</h3><p>Dal martedì alla domenica, dalle 19:00 a mezzanotte.</p></div></li>
+     <li><b>iii.</b><div><h3>Prenotazione</h3><p>Meglio telefonare, soprattutto nel fine settimana.</p></div></li>
+    </ul>
+   </div>
+   <div class="col-wide" data-reveal="right">
+    <div class="px photo-b"><img data-parallax="0.1" loading="lazy" src="img/foto-4.jpg" alt="Spaghetti con pomodorini e basilico su tavolo di legno, immagine illustrativa" width="640" height="800"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 03 Galleria ===== -->
+<section class="section" id="galleria">
+ <div class="wrap">
+  <div class="grid">
+   <div class="sec-head"><span class="num">03</span><span class="kicker">Galleria</span></div>
+   <div class="gal-intro" data-reveal="left">
+    <h2 class="h2" data-split>Immagini di <em>cucina</em></h2>
+    <p>Una selezione illustrativa, per dare l'idea di una cucina italiana. Non sono foto del locale.</p>
+   </div>
+   <div class="gallery">
+    <figure data-reveal="left"><div class="px"><img data-parallax="0.08" loading="lazy" src="img/foto-5.jpg" alt="Pizza con verdure di stagione, immagine illustrativa" width="640" height="640"></div><figcaption>Pizza</figcaption></figure>
+    <figure data-reveal="right" data-delay="100"><div class="px"><img data-parallax="0.08" loading="lazy" src="img/foto-6.jpg" alt="Pizza appena sfornata su un tavolo, immagine illustrativa" width="640" height="640"></div><figcaption>Dal forno</figcaption></figure>
+    <figure data-reveal="left"><div class="px"><img data-parallax="0.08" loading="lazy" src="img/foto-7.jpg" alt="Tagliatelle fresche messe ad asciugare, immagine illustrativa" width="640" height="640"></div><figcaption>Pasta fresca</figcaption></figure>
+    <figure data-reveal="right" data-delay="100"><div class="px"><img data-parallax="0.08" loading="lazy" src="img/foto-8.jpg" alt="Mano che cala gli spaghetti in una pentola d'acqua bollente, immagine illustrativa" width="640" height="640"></div><figcaption>In pentola</figcaption></figure>
+   </div>
+  </div>
+ </div>
+ <div class="marquee" aria-hidden="true">
+  <div class="track" data-marquee><span>Pranzo</span><span>Cena</span><span>Da martedì a domenica</span><span>La Spezia</span><span>Pranzo</span><span>Cena</span><span>Da martedì a domenica</span><span>La Spezia</span></div>
+ </div>
+</section>
+
+<!-- ===== 04 Orari e come arrivare ===== -->
+<section class="section tavola" id="contatti">
+ <div class="wrap">
+  <div class="grid">
+   <div class="sec-head"><span class="num">04</span><span class="kicker">Orari e come arrivare</span></div>
+   <div class="contact-main" data-reveal="left">
+    <h2 class="h2" data-split>Trovaci sulla <em>Costa</em></h2>
+    <p class="lead">Per prenotare o chiedere del menu, telefona. Ti risponderemo in sala.</p>
+    <div class="actions">
+     <a class="btn btn-primary" href="tel:+390187001055" data-magnetic>Chiama ora</a>
+     <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=A.S.D.+Str%C3%A0+Marinasco+Via+Costa+di+Santa+Lucia+9+La+Spezia" target="_blank" rel="noopener">Come arrivare</a>
+    </div>
+   </div>
+   <div class="info" data-reveal="right">
+    <ul class="hours">
+     <li class="off"><span>Lunedì</span><span>Chiuso</span></li>
+     <li><span>Martedì – Domenica</span><span>11:30 – 16:00</span></li>
+     <li><span>Martedì – Domenica</span><span>19:00 – 24:00</span></li>
+    </ul>
+    <dl class="data">
+     <dt class="kicker">Indirizzo</dt>
+     <dd>Via Costa di Santa Lucia 9, La Spezia</dd>
+     <dt class="kicker">Telefono</dt>
+     <dd><a href="tel:+390187001055">+39 0187 01055</a></dd>
+     <dt class="kicker">Email</dt>
+     <dd><a href="mailto:circolostra.endas@virgilio.it">circolostra.endas@virgilio.it</a></dd>
+    </dl>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== 05 Invito finale ===== -->
+<section class="section cta">
+ <div class="wrap">
+  <p class="kicker" data-reveal>Prenota</p>
+  <h2 class="h2" data-split>Un tavolo ti <em>aspetta</em></h2>
+  <div data-reveal="left">
+   <div class="actions">
+    <a class="btn btn-primary" href="tel:+390187001055" data-magnetic>Chiama 0187 01055</a>
+    <a class="btn btn-ghost" href="mailto:circolostra.endas@virgilio.it">Scrivi una email</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer class="footer">
+ <div class="wrap">
+  <p>A.S.D. Strà Marinasco · Via Costa di Santa Lucia 9, La Spezia</p>
+  <p>Immagini illustrative, non dell'attività. Foto di Pexels, MatteoPhotoPro2020, keram, px_steven_be, Daria-Yakovleva, Mrdidg e JESHOOTS-com <a href="https://pixabay.com" target="_blank" rel="noopener">su Pixabay</a>.</p>
+  <p>Anteprima creata da RR Web Agency, rrwebagency.it</p>
+ </div>
+</footer>
+
+<div class="call-bar"><a class="btn btn-primary" href="tel:+390187001055">Chiama</a></div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"A.S.D. Strà Marinasco","servesCuisine":"Italiana","telephone":"+39 0187 01055","email":"circolostra.endas@virgilio.it","address":{"@type":"PostalAddress","streetAddress":"Via Costa di Santa Lucia 9","addressLocality":"La Spezia","addressCountry":"IT"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"19:00","closes":"24:00"}]}
+</script>
+<script>
+(function(){
+var d=document,root=d.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'}):null;
+function watch(el){if(io){io.observe(el);}else{el.classList.add('in');}}
+var esc={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'};
+function safe(s){return s.replace(/[&<>"]/g,function(c){return esc[c];});}
+[].forEach.call(d.querySelectorAll('[data-split]'),function(el){
+  var parole=[],label=el.textContent.replace(/\s+/g,' ').trim();
+  [].forEach.call(el.childNodes,function(n){
+    var tag=n.nodeType===1?n.tagName.toLowerCase():null,cls=n.nodeType===1?n.className:'';
+    n.textContent.split(/\s+/).filter(Boolean).forEach(function(w){parole.push({w:w,t:tag,c:cls});});
+  });
+  el.setAttribute('aria-label',label);
+  el.innerHTML=parole.map(function(p,i){
+    var st='style="--i:'+i+'"';
+    var inner=p.t?'<'+p.t+(p.c?' class="'+safe(p.c)+'"':'')+' '+st+'>'+safe(p.w)+'</'+p.t+'>':'<span '+st+'>'+safe(p.w)+'</span>';
+    return '<span class="w" aria-hidden="true">'+inner+'</span>';
+  }).join(' ');
+  watch(el);
+});
+[].forEach.call(d.querySelectorAll('[data-reveal]'),function(el){var dl=el.getAttribute('data-delay');if(dl){el.style.setProperty('--d',dl+'ms');}watch(el);});
+[].forEach.call(d.querySelectorAll('[data-marquee]'),function(el){el.innerHTML+=el.innerHTML;el.setAttribute('aria-hidden','true');});
+var px=[].slice.call(d.querySelectorAll('[data-parallax]')),tick=false;
+function onScroll(){
+  tick=false;
+  var y=window.pageYOffset||root.scrollTop,h=root.scrollHeight-innerHeight;
+  root.classList.toggle('scrolled',y>40);
+  root.style.setProperty('--p',h>0?Math.min(1,y/h).toFixed(4):'0');
+  if(!rm){
+    var vh=innerHeight;
+    px.forEach(function(el){
+      var r=(el.parentNode||el).getBoundingClientRect();
+      if(r.bottom<-120||r.top>vh+120){return;}
+      var s=parseFloat(el.getAttribute('data-parallax'))||.12;
+      el.style.transform='translate3d(0,'+(((r.top+r.height/2)-vh/2)*-s).toFixed(1)+'px,0)';
+    });
+  }
+}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll);}},{passive:true});
+addEventListener('resize',onScroll);
+onScroll();
+if(!rm&&matchMedia('(pointer:fine)').matches){
+  [].forEach.call(d.querySelectorAll('[data-magnetic]'),function(b){
+    b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*.35).toFixed(1)+'px)';});
+    b.addEventListener('pointerleave',function(){b.style.transform='';});
+  });
+}
+})();
+</script></body>
+</html>
